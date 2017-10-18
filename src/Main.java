@@ -49,7 +49,7 @@ public class Main {
                 player.setLimit(limit);
                 //int bet = 5;
 
-                System.out.println(String.format("Start Game %d: ", i));
+                System.out.println(String.format("Start Game %d: ", i + 1));
                 System.out.println(String.format("%s starts with balance %d, limit %d", 
                 		player.getName(), player.getBalance(), player.getLimit()));
 
