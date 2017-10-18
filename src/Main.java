@@ -9,9 +9,9 @@ public class Main {
 	   BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
            Scanner sc = new Scanner(System.in);
 
-        Dice d1 = new Dice();
-        Dice d2 = new Dice();
-        Dice d3 = new Dice();
+//        Dice d1 = new Dice();
+//        Dice d2 = new Dice();
+//        Dice d3 = new Dice();
 
         //Player player = new Player("Fred", 100);
         System.out.println("Enter Player Name: ");
@@ -27,8 +27,8 @@ public class Main {
         
         System.out.println("Enter Bet Amount..");
         int bet = sc.nextInt();
-        Game game = new Game(d1, d2, d3);
-        List<DiceValue> cdv = game.getDiceValues();
+//        Game game = new Game(d1, d2, d3);
+//        List<DiceValue> cdv = game.getDiceValues();
 
         int totalWins = 0;
         int totalLosses = 0;
@@ -56,8 +56,15 @@ public class Main {
                 int turn = 0;
                 while (player.balanceExceedsLimitBy(bet) && player.getBalance() < 200)
                 {
+                    Dice d1 = new Dice();
+                    Dice d2 = new Dice();
+                    Dice d3 = new Dice();
+                    
+                    
+                    Game game = new Game(d1, d2, d3);
+                    List<DiceValue> cdv = game.getDiceValues();
                     turn++;                    
-                	DiceValue pick = DiceValue.getRandom();
+                    DiceValue pick = DiceValue.getRandom();
                    
                 	System.out.printf("Turn %d: %s bet %d on %s\n",
                 			turn, player.getName(), bet, pick); 
