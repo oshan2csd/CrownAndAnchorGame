@@ -3,8 +3,9 @@ public class Player {
 	private String name;
 	private int balance;
 	private int limit;
+        private int age;
 	
-	public Player(String name, int balance) {
+	public Player(String name, int balance, int age) {
 		if (name == null || name .isEmpty()) throw new IllegalArgumentException("Name cannot be null or empty");
 		if (balance < 0) throw new IllegalArgumentException("Balance cannot be negative");
 		this.name = name;
@@ -15,6 +16,7 @@ public class Player {
 	public String getName() { return name; }
 	public int getBalance() { return balance; }
 	public int getLimit() { return limit; }
+	public int getAge() { return age; }
 	
 	public void setLimit(int limit) {
 		if (limit < 0) throw new IllegalArgumentException("Limit cannot be negative.");

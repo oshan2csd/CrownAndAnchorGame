@@ -16,6 +16,14 @@ public class Main {
         //Player player = new Player("Fred", 100);
         System.out.println("Enter Player Name: ");
         String playerName = sc.nextLine();
+        
+        //get age
+        System.out.println("Enter Player Age: ");
+        int playerAge = sc.nextInt();
+        if(playerAge < 18) {
+            System.err.println("Age cannot be less than 18..!");
+            return;
+        }
         Game game = new Game(d1, d2, d3);
         List<DiceValue> cdv = game.getDiceValues();
 
@@ -33,7 +41,7 @@ public class Main {
                 String name = playerName;
             	int balance = 100;
             	int limit = 0;
-                Player player = new Player(name, balance);
+                Player player = new Player(name, balance, playerAge);
                 //player = new Player(name, balance);
                 player.setLimit(limit);
                 int bet = 5;
