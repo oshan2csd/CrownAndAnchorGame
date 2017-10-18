@@ -1,17 +1,21 @@
 import java.util.List;
 import java.io.*;
+import java.util.Scanner;
 
 public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		
 	   BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+           Scanner sc = new Scanner(System.in);
 
         Dice d1 = new Dice();
         Dice d2 = new Dice();
         Dice d3 = new Dice();
 
-        Player player = new Player("Fred", 100);
+        //Player player = new Player("Fred", 100);
+        System.out.println("Enter Player Name: ");
+        String playerName = sc.nextLine();
         Game game = new Game(d1, d2, d3);
         List<DiceValue> cdv = game.getDiceValues();
 
@@ -25,10 +29,12 @@ public class Main {
             
             for (int i = 0; i < 100; i++)
             {
-            	String name = "Fred";
+            	//String name = "Fred";
+                String name = playerName;
             	int balance = 100;
             	int limit = 0;
-                player = new Player(name, balance);
+                Player player = new Player(name, balance);
+                //player = new Player(name, balance);
                 player.setLimit(limit);
                 int bet = 5;
 
