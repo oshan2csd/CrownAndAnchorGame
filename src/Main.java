@@ -97,8 +97,14 @@ public class Main {
             totalWins += winCount;
             totalLosses += loseCount;
 
+            System.out.println("Do you want to exit (Y/N)");
             String ans = console.readLine();
-            if (ans.equals("q")) break;
+            if (ans.equals("y") || ans.equals("Y")) {
+                break;
+            }
+            else{
+                continue;
+            }
         } //while true
         
         System.out.println(String.format("Overall win rate = %.1f%%", (float)(totalWins) / (totalWins + totalLosses)));
